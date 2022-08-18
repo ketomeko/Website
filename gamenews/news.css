@@ -1,0 +1,286 @@
+:root {
+    --orange: #EB5E28;
+    --black: #252422;
+    --grey: #635F59;
+    --silver: #B1AEA6;
+    --lightgrey: #D8D5CC;
+    --floralwhite: #D8D5CC;
+    --floralwhiteT: #d8d5cc80;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+body {
+    min-height: 100vh;
+    background-color: var(--floralwhite);
+}
+/*Header*/
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    position: fixed;
+    background: black;
+    z-index: 2;
+}
+header.sticky {
+    background: rgba(0, 0, 0, 0.47);
+}
+
+header .brand {
+    color: var(--floralwhite);
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+header .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .menu a{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    transition: ease-in-out 0.5s;
+    transition-property: color, background;
+}
+header .menu a:hover{
+    color: black;
+    background: var(--floralwhiteT);
+}
+header .btn{
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 1060px) {
+    header .btn {
+        display: block;
+        color: white;
+    }
+    header .menu{
+        position: fixed;
+        background: var(--black);
+        flex-direction: column;
+        min-width: 400px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 80px 50px;
+        transition: 0.5s;
+        transition-property: right;
+    }
+    header .menu .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+        color: white;
+    }
+    header .menu.active {
+        right: 0;
+    }
+    header .menu a {
+        display: block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 0px 15px;
+    }
+}
+/* Resim */
+
+.boxx .image {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+
+.boxx .image img{
+    display: block;
+    width: 100%;
+    margin: -43px 0px;
+
+}
+
+/* Yazı */
+
+.welcome {
+    padding: 50px 100px;
+    margin-top: -157px;
+    background-color: white;
+    border-radius: 30px 30px 0 0;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.container h3{
+    font-size: 20px;
+    color: var(--black);
+}
+.container p{
+    font-size: 15px;
+    color: var(--grey);
+    line-height: 2;
+    padding: 20px 0;
+}
+/* Geçmiş Haberler */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px 20px;
+
+}
+.container h1 {
+    margin-top: 20px;
+}
+.container .heading {
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+.container .box-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+    gap: 50px;
+
+}
+.container .box-container .box {
+    background-color: floralwhite;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    display: none;
+}
+.container .box-container .box:nth-child(1),
+.container .box-container .box:nth-child(2),
+.container .box-container .box:nth-child(3){
+    display: inline-block;
+}
+.container .box-container .box .image{
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.container .box-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.container .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+.container .box-container .box .content h3{
+    font-size: 20px;
+    color: var(--black);
+}
+.container .box-container .box .content p{
+    font-size: 15px;
+    color: var(--grey);
+    line-height: 2;
+    padding: 20px 0;
+}
+.container .box-container .box .content .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid var(--grey);
+    color: var(--grey);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-decoration: none;
+}
+.container .box-container .box .content .btn:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: var(--black);
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    padding: 70px 0;
+}
+.row {
+    display: flex;
+    flex-wrap: flex;
+}
+ul {
+    list-style: none;
+}
+.dream {
+    max-width: 1170px;
+    margin: auto;
+}
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4 {
+    font-size: 20px;
+    color:var(--floralwhite);
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--floralwhite);
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--silver);
+    display: block ;
+    transition: ease-in-out 0.5s;
+}
+.footer-col ul li a:hover {
+    padding-left: 10px;
+}
+
+.footer-col hr {
+    margin-top: -20px;
+    margin-bottom: 15px;
+    width: 50%;
+    border-color: #EB5E28;
+}
+.footer-col a i{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--floralwhite);
+}
+.footer-col a i:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    color: var(--floralwhite);
+    background-color: var(--orange);
+}
